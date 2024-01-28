@@ -17,4 +17,14 @@ class ProductController extends Controller
             array_merge($response, Product::getProductByPriceLinear($price))
         );
     }
+
+    public function binarySearch(ProductRequest $request): JsonResponse
+    {
+        $data = $request->validated();
+        $price = $data['price'];
+        $response = ['algorithm' => 'binary'];
+        return response()->json(
+            array_merge($response, Product::getProductByPriceBinary($price))
+        );
+    }
 }

@@ -5,4 +5,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('algorithm')->group(function () {
     Route::get('/linear', [ProductController::class, 'linearSearch']);
+    Route::get('/binary', [ProductController::class, 'binarySearch']);
 });
